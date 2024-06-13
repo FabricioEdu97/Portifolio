@@ -4,34 +4,91 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Remove scroll horizontal */
 }
 
 header {
     background-color: #333;
     color: white;
     padding: 15px 0;
-    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 20px;
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-nav ul li a {
+.logo img {
+    width: 75px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-right: 10px; /* Espaço entre a imagem e o texto */
+}
+
+.logo a {
     color: white;
     text-decoration: none;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: white;
+    color: #333;
+    border-radius: 5px;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 29px;
+    height: 25px;
+    filter: invert(100%);
+    transition: filter 0.3s;
+}
+
+social-icons img:hover {
+    filter: invert(0%);
 }
 
 main {
@@ -42,6 +99,7 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     text-align: center;
+    flex: 1;
 }
 
 main h1 {
@@ -60,10 +118,39 @@ main img {
     border-radius: 8px;
 }
 
-.about img {
-    max-width: 300px;
-    border-radius: 50%;
-    margin: 20px 0;
+.main-image {
+    max-width: 100%; /* Ajuste o tamanho conforme necessário */
+    height: 250px;
+    margin: 20px auto;
+    display: block;
+}
+
+footer {
+    padding: 20px;
+    background-color: #333;
+    width: 100%;
+}
+
+.tech-icons {
+    padding: 15px;
+    border: 1px dashed #000000;
+    border-radius: 19px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    background-color: #f0f8ff;
+    margin: 15px auto;
+    max-width: 590px;
+}
+
+.tech-icons img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+.tech-icons img:hover {
+    transform: scale(1.2);
 }
 
 .contacts ul {
@@ -79,21 +166,16 @@ main img {
     font-size: 1.2em;
     color: #0073e6;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .contacts ul li a:hover {
     text-decoration: underline;
 }
 
-.services .service-item {
-    margin: 20px 0;
-}
-
-.services .service-item h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.services .service-item img {
-    border-radius: 8px;
+.contacts ul li img.contact-icon {
+    width: 60px;
+    height: 40px;
+    margin-right: 10px;
 }

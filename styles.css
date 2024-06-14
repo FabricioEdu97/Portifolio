@@ -1,18 +1,42 @@
+:root {
+    --font-family: 'Arial', sans-serif;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg-color: #333;
+    --header-text-color: white;
+    --link-color: #0073e6;
+    --link-hover-bg-color: white;
+    --link-hover-text-color: #333;
+    --footer-bg-color: #333;
+    --tech-icon-bg-color: #f0f8ff;
+    --border-color: #ccc;
+    --hover-bg-color: #f0f0f0;
+    --logo-width: 75px;
+    --social-icon-width: 29px;
+    --social-icon-height: 25px;
+    --contact-icon-width: 60px;
+    --contact-icon-height: 40px;
+    --about-image-max-width: 300px;
+    --contact-list-padding: 50px;
+    --contact-list-margin: 250px auto;
+    --contact-list-width: 950px;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden; /* Remove scroll horizontal */
+    overflow-x: hidden;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -34,13 +58,13 @@ nav {
 }
 
 .logo img {
-    width: 75px; /* Ajuste o tamanho conforme necessário */
+    width: var(--logo-width);
     height: auto;
-    margin-right: 10px; /* Espaço entre a imagem e o texto */
+    margin-right: 10px;
 }
 
 .logo a {
-    color: white;
+    color: var(--header-text-color);
     text-decoration: none;
     font-size: 1.5em;
     font-weight: bold;
@@ -58,7 +82,7 @@ nav {
 }
 
 .nav-links li a {
-    color: white;
+    color: var(--header-text-color);
     text-decoration: none;
     font-weight: bold;
     padding: 5px 10px;
@@ -66,8 +90,8 @@ nav {
 }
 
 .nav-links li a:hover {
-    background-color: white;
-    color: #333;
+    background-color: var(--link-hover-bg-color);
+    color: var(--link-hover-text-color);
     border-radius: 5px;
 }
 
@@ -81,13 +105,13 @@ nav {
 }
 
 .social-icons img {
-    width: 29px;
-    height: 25px;
+    width: var(--social-icon-width);
+    height: var(--social-icon-height);
     filter: invert(100%);
     transition: filter 0.3s;
 }
 
-social-icons img:hover {
+.social-icons img:hover {
     filter: invert(0%);
 }
 
@@ -103,7 +127,7 @@ main {
 }
 
 main h1 {
-    color: #333;
+    color: var(--text-color);
     font-size: 2em;
 }
 
@@ -119,7 +143,7 @@ main img {
 }
 
 .main-image {
-    max-width: 100%; /* Ajuste o tamanho conforme necessário */
+    max-width: 100%; 
     height: 250px;
     margin: 20px auto;
     display: block;
@@ -127,7 +151,7 @@ main img {
 
 footer {
     padding: 20px;
-    background-color: #333;
+    background-color: var(--footer-bg-color);
     width: 100%;
 }
 
@@ -138,7 +162,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 35px;
-    background-color: #f0f8ff;
+    background-color: var(--tech-icon-bg-color);
     margin: 15px auto;
     max-width: 590px;
 }
@@ -153,29 +177,153 @@ footer {
     transform: scale(1.2);
 }
 
-.contacts ul {
+.contacts {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-list {
     list-style: none;
-    padding: 0;
+    padding: var(--contact-list-padding);
+    margin: var(--contact-list-margin);
+    width: var(--contact-list-width);
+    background-color: #fff;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden; 
 }
 
-.contacts ul li {
-    margin: 10px 0;
+.contact-list li {
+    margin: 0;
 }
 
-.contacts ul li a {
+.contact-list li a {
     font-size: 1.2em;
-    color: #0073e6;
+    color: var(--link-color);
     text-decoration: none;
     display: flex;
     align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.contacts ul li a:hover {
+.contact-list li a:hover {
     text-decoration: underline;
+    background-color: var(--hover-bg-color); 
 }
 
-.contacts ul li img.contact-icon {
-    width: 60px;
-    height: 40px;
+.contact-icon {
+    width: var(--contact-icon-width);
+    height: var(--contact-icon-height);
     margin-right: 10px;
+}
+
+.about-image {
+    max-width: var(--about-image-max-width); 
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+        justify-content: center; 
+    }
+
+    .logo {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .logo img {
+        width: 50px;
+        margin: 0 0 10px 0;
+    }
+
+    .logo a {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .contact-list {
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px 0;
+        width: 90%;
+    }
+
+    .contact-list li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .contact-list li a {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 30px;
+        margin-right: 0;
+    }
+
+    .tech-icons {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+        margin: 10px auto;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .tech-icons img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+    nav {
+        padding: 0 10px;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .contact-list {
+        padding: 30px;
+        margin: 50px auto;
+        width: 80%;
+    }
+
+    .tech-icons {
+        gap: 20px;
+    }
 }
